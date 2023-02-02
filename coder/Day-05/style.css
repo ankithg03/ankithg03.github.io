@@ -1,0 +1,159 @@
+@font-face {
+    font-family: "font01";
+    src: 
+    url("Montserrat-Italic.otf") format("opentype");
+    }
+@font-face {
+    font-family: "font02";
+    src: 
+    url("Montserrat-Regular.otf") format("opentype");
+    }
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "font02";
+}
+body{
+    background-color: #28c2fb;
+
+}
+.navbar{
+  display: flex;  
+  background-color: black;  
+  box-shadow: 0 0 10px #000000ad;
+}
+.navbar li{
+    list-style-type: none;  
+}
+a{
+    display: block;
+    text-decoration: none;
+    padding: 20px 10px 20px 10px;
+    color: rgb(0, 225, 255);
+    font-weight: bold;
+}
+.navbar li a:hover{
+    background-color: rgb(0, 225, 255);
+    color: black;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.calc{
+    background-color: #00c3ffad;
+}
+table tr td{
+    height: 50px;
+    width: 50px;
+}
+table{
+    background-color:#2c3438;
+    padding:  0;
+    position: absolute;
+    left: 29%;
+    top: 25%;
+    right: 25%;
+    border-radius: 5px;
+    box-shadow: 6px 7px 12px #00000063;
+}
+table tr td input{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: hsl(213, 86%, 67%);
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+table tr td input[type="button"]:hover{
+    background: #0053ba;
+}
+
+table tr td input[type="button"]:focus {
+    outline-offset: -4px;
+}
+
+table tr td input[type="button"]:active {
+    transform: scale(0.99);
+}
+.result{
+    border: 0;
+    width: 88%;
+    background-color: #00000000;
+}
+.result:focus, .result:active{
+    border: 0;
+}
+footer{
+    background-color: black;
+    color: cadetblue;
+    display: block;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+
+@media only screen and (max-width: 1200px){
+    table tr td input {
+        width: 0;
+        }
+    table{
+        position: absolute;
+        right: 0%;
+        left: 29%;
+        top: 25%;
+   
+
+    }
+}
+
+@media only screen and (max-width: 800px){
+    table tr td input {
+        width: 0;
+        }
+    table{
+        position: absolute;
+        right: 0%;
+        left: 25%;
+        top: 25%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    table tr td input {
+    width: 0;
+    text-align: left;
+    }
+    table{
+        position: absolute;
+        right: 0%;
+        left: 20%;
+        top: 20%;
+        overflow-x: hidden;
+    }
+}
+@media only screen and (max-width: 420px){
+    table tr td input {
+        width: 0;
+        text-align: left;
+        }
+        table{
+            position: absolute;
+            right: 0%;
+            left: 3%;
+            top: 30%;
+            overflow-x: hidden;
+        }
+}

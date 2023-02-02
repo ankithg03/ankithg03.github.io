@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankith G</title>
+    <meta property="og:title" content="Ankith G - Portfolio"/>
+    <meta property="og:description" content="why do you want to fit in when you were born to stand out..."/>
+    <meta property="og:image" content="images/img6.jpg"/>
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:image:alt" content="Ankith G - Portfolio">
+    <meta type="og:url" content="https://www.instagram.com/ankith546/"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/style.css">
+	<style>
+		body{
+		   overscroll-behavior-y: contain;
+		}
+	</style>
+</head>
+<body>
+    <div class="menu" id="menu">
+        <img src="images/menu.png"/>
+    </div>
+    <main class="main">
+        <aside class="sidebar">
+          <nav class="nav">
+            <ul>
+              <li class="active"><a href="#top">KnightWing</a></li>
+              <li><a href="#who-am-i" class="who-am-i-hover">Explore Yourself?</a></li>
+              <li><a href="#what-do-i-do">What Can I Do</a></li>
+              <li><a href="#what-i-know">What Do I know</a></li>
+            </ul>
+          </nav>
+        </aside>
+      
+        <section class="ankith">
+          <div class="container" style="font-family: monospace;">
+              <div class="top" id="top">
+                <a target="_blank" href="https://www.instagram.com/ankith546/">
+                    <img class="social" src="asd.jpeg">
+                  </a>
+                  <p class="name">Ankith G</p>
+                  <p class="designation">Software developer</p>
+              </div>
+              <div class="who-am-i" id="who-am-i">
+                  <h2>Explore Yourself</h2>
+                  <div id="slider" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+                    <div><img id="img-01" src="images/img1.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img2.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img3.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img4.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img5.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img6.jpg" alt="my-img"></div>
+                    <div><img id="img-01" src="images/img7.jpg" alt="my-img"></div>
+                  </div>
+              </div>
+<div class="index" id="who-am-i" style="
+    display: -webkit-box;
+    height: 500px;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    background: #868686;
+    max-height: 500px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    background-color: white;">
+                  <h2 style="
+    /* margin: auto; */
+    margin: auto auto 0 auto;
+    /* background: aqua; */
+    /* padding:  0 12px; */
+    color: cornflowerblue;">Index</h2>
+    <div class="links" style="
+    margin: 0 auto auto auto;">
+        <ul style="
+    list-style: none;">
+            <li><a href="./coder/Day-04/">ecomm</a></li>
+<li style="list-style: none;"><a href="./game.html">game</a></li>
+<li><a href="./panel.html">panel</a></li>
+<li><a href="./coder/Day-05/">calci</a></li>
+<li><a href="./extra.html">loader</a></li>
+    <li><a href="./service.html">know your user agent</a></li
+><li><a href="./login.html">login</a></li>
+<li><a href="./coder/day2phpTask1/">day2phpTask1</a></li>
+<li><a href="./coder/day2phpTask/">day2phpTask</a></li>
+<li><a href="./coder/Day-06">Day-06(Api)</a></li>
+<li><a href="./coder/Day-07/">Objects &amp; Functions(JS)</a></li>
+<li><a href="./coder/EmployeeTask/">Employee</li>
+<li><a href="./coder/index.php">Tech Breaker</a></li>
+</ul>
+</div>
+                  
+              </div>
+              <div class="what-do-i-do" id="what-do-i-do">
+                <div class="header">
+                    <h1 class="title slide-bar">What can i do?</h1>
+                    <p class="subtitle slide-bar">
+                      <a id="code" href="#"><\Code></a>
+                      <a id="design" href="#"><\Design></a>
+                    </p>
+                </div>
+              </div>
+              <div class="what-i-know" id="what-i-know">
+                  <h2>
+                      Skills
+                  </h2>
+                <div class="col">
+                    <div class="language red">
+                        <div>
+                            <p>C</p>
+                        </div>
+                       
+                    </div>
+                    <div class="language">
+                        <div>
+                            <p>C++</p>                        
+                        </div>
+                     
+                    </div>
+                    <div class="language red">
+                        <div>
+                            <p>JAVA</p>
+                        </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="language">
+                        <div>
+                            <p>php</p>
+                        </div>
+                      </div>
+                      <div class="language red">
+                        <div>
+                            <p>C#  </p>
+                        </div>
+                        
+                      </div>
+                      <div class="language">
+                        <div>
+                            <p>javascript</p>
+                        </div>
+                        
+                      </div>
+                  </div> 
+ 		<div class="col">
+                    <div class="language red">
+                        <div>
+                            <p>Magento</p>
+                        </div>
+                      </div>
+                      <div class="language">
+                        <div>
+                            <p>Python</p>
+                        </div>
+                        
+                      </div>
+                      <div class="language red">
+                        <div>
+                            <p>React</p>
+                        </div>
+                        
+                      </div>
+                  </div> 
+              </div>
+              <div class="footer">
+                © 2020 Ankith G.
+              </div>
+          </div>
+        </section>
+      </main>
+	<script type="text/javascript" src="js/jquery-3.4.1.slim.min.js"></script>
+	<script type="text/javascript" src="slick/slick.js"></script>
+	<script type="text/javascript" src="slick/slick.min.js"></script> 
+     <script type="text/javascript" src="js/portfolio.js"></script> 
+</body>
+</html>

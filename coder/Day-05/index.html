@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+	<nav class="navbar">
+		<li>
+			<a href="../index.php">Home</a>
+		</li>
+		<li>
+			<a href="#">Calculator</a>
+		</li>
+		<li>
+			<a href="../Day-04/">Ecommerce</a>
+		</li>
+	</nav>
+</header>
+<div class="calc">
+<FORM NAME="Calc">
+        <table>
+        <tr>
+            <td colspan="5">
+            	<input TYPE="text" class="result"  NAME="input"  readonly>
+            </td>
+        </tr>
+        <tr>
+                <td colspan="5">
+                	<input TYPE="text" class="result"  NAME="input1"  readonly>
+                </td>
+            </tr>
+        <tr>
+			<td>
+				<input class="btn" TYPE="button" NAME="one"   VALUE="  1  " OnClick=" functionvalue('1');">
+			</td> 
+			<td>
+				<input class="btn" TYPE="button" NAME="two"   VALUE="  2  " OnCLick="functionvalue('2');">
+			</td> 
+			<td>
+				<input class="btn" TYPE="button" NAME="three" VALUE="  3  " OnClick="functionvalue('3');">
+			</td> 
+			<td>
+				<input class="btn" TYPE="button" NAME="plus"  VALUE="  +  " OnClick="functionvalue('+');">
+			</td> 
+			<td rowspan="4" >
+					<input class="btn" TYPE="button" NAME="one"   VALUE="  <-- " OnClick=" functionbackspace();">
+				</td> 
+        </tr>
+        <tr>
+        <td>
+        	<input class="btn" TYPE="button" NAME="four"  VALUE="  4  " OnClick="functionvalue('4');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="five"  VALUE="  5  " OnCLick="functionvalue('5');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="six"   VALUE="  6  " OnClick="functionvalue('6');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="minus" VALUE="  -  " OnClick="functionvalue('-');">
+        </td>
+    </tr>
+    <tr>
+         <td>
+        	<input class="btn" TYPE="button" NAME="seven" VALUE="  7  " OnClick="functionvalue('7');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="eight" VALUE="  8  " OnCLick="functionvalue('8');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="nine"  VALUE="  9  " OnClick="functionvalue('9');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="times" VALUE="  x  " OnClick="functionvalue('*');">
+        </td>
+    </tr>
+    <tr>
+        <td>
+        	<input class="btn" TYPE="button" NAME="clear" VALUE="  c  " OnClick="Calc.input.value = '';Calc.input1.value='';">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="zero"  VALUE="  0  " OnClick="functionvalue('0');">
+		</td> 
+		<td>
+        	<input class="btn" TYPE="button" NAME="DoIt"  VALUE="  %  " OnClick="functionvalue('%');">
+        </td>
+        <td>
+        	<input class="btn" TYPE="button" NAME="div"   VALUE="  /  " OnClick="functionvalue('/');">
+        </td>
+    </tr>
+        </TABLE>
+        </FORM>
+
+
+
+    </div>
+    <footer>
+        <p>ankithg03@gmail.com</p>
+    
+        <p>7892195187</p>
+    </footer>
+    <script src="script.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: #020631;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        body {background: #020631;}
+
+        .login,.signup {
+            margin: auto;
+            display: grid;
+            /* grid-template-columns: 1fr; */
+            background: #131528;
+            border-radius: 5px;
+        }
+
+        .field {
+            margin: 10px;
+            color: white;
+            font-family: sans-serif;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .field h2,.field label,.field input,.field button, .field div,.field p.error {
+            vertical-align: middle;
+            margin: auto 10px;
+        }
+
+        .field input {
+            padding: 8px;
+            border-radius: 3px;
+            border: 0;
+            outline: 0;
+        }
+
+        .field button {
+            padding: 10px;
+            border: 0;
+            border-radius: 5px;
+            width: 100px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 600;
+            background: #d9d9d9;
+        }
+        a {
+            color: #00caff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div class="login">
+                <div class="field">
+                    <h2>
+                        Login
+                    </label>
+                </div>
+                <div class="field">
+                    <label>
+                        UserId
+                    </label>
+                    <input class="fieldInput" type="text" name="" id="loginUserId" placeholder="Enter the User Id" validation="required"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="loginUserIdErr" validation="loginUserId"></p>
+                </div>
+                <div class="field">
+                    <label>
+                        Password
+                    </label>
+                    <input class="fieldInput" type="password" name="" id="loginPassword" placeholder="Enter the Password" validation="required"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="loginPasswordErr" validation="loginPassword"></p>
+                </div>
+                <div class="field">
+                
+                    <button name="login-button" id="submitLogin">
+                            Login
+                    </button>
+                    <div>New here? <a href="#signup" onclick="login();">Create an Account</a></div>
+                </div>
+                <div class="field">
+                    <p class="error" id="loginErr"></p>
+                </div>
+            </div>
+            <div class="signup">
+                <div class="field">
+                    <h2>
+                        Sign Up
+                    </label>
+                </div>
+                <div class="field">
+                    <label>
+                        UserId
+                    </label>
+                    <input class="fieldInput" type="text" name="" id="SignUpUserId" placeholder="Enter the User Id" validation="required unique userId"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="SignUpUserIdErr" validation="SignUpUserId"></p>
+                </div>
+                <div class="field">
+                    <label>
+                        User Name
+                    </label>
+                    <input class="fieldInput" type="text" name="" id="SignUpUserName" placeholder="Enter the User Name" validation="required"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="SignUpUserNameErr" validation="SignUpUserName"></p>
+                </div>
+                <div class="field">
+                    <label>
+                        Password
+                    </label>
+                    <input class="fieldInput" type="password" name="" id="SignUpPassword" placeholder="Enter the Password" validation="required"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="SignUpPasswordErr" validation="SignUpPassword"></p>
+                </div>
+                <div class="field">
+                    <label>
+                        Confirm Password 
+                    </label>
+                    <input class="fieldInput" type="password" name="" id="SignUpCPassword" placeholder="Enter the Confirm Password" validation="required cpass" for="SignUpPassword"/>
+                </div>
+                <div class="field">
+                    <p class="error" id="SignUpCPasswordErr" validation="SignUpCPassword"></p>
+                </div>
+                <div class="field">
+                
+                    <button name="login-button" id="submitSignUp">
+                            Sign Up
+                    </button>
+                    <div>Already have an Account? <a href="#login" onclick="signUp();">Login</a></div>
+                </div>
+            </div>
+    </div>
+    <script>
+        const login = ()=>{
+            document.querySelector('.login').style.display = 'none';
+            document.querySelector('.signup').style.display = 'grid';
+
+        };
+        const signUp = ()=>{
+            document.querySelector('.signup').style.display = 'none';
+            document.querySelector('.login').style.display = 'grid';
+        };
+        if(window.location.hash === "#login" || window.location.hash === ""){
+            signUp()
+        } else {
+            login()
+        }
+        var fields = ['SignUpUserId', 'SignUpUserName', 'SignUpPassword', 'SignUpCPassword'];
+        fields.every((field)=>{
+            document.querySelector('#'+field).addEventListener('keyup',function updateValue(e) {
+                if(e.target.attributes.validation.value.includes("required")){
+                    if(e.target.value!=''){
+                        document.querySelector('[validation="'+e.target.id+'"]').innerText = '';
+                    }else{
+                        document.querySelector('[validation="'+e.target.id+'"]').innerText = 'Please Enter the Value';
+                    }
+                } 
+                if(e.target.attributes.validation.value.includes("cpass")){
+                    if(document.querySelector('#'+e.target.attributes.for.value).value === e.target.value) {
+                        if(e.target.value === ''){
+                            document.querySelector('[validation="'+e.target.id+'"]').innerText = 'Please Enter the Value';
+                        } else{
+                            document.querySelector('[validation="'+e.target.id+'"]').innerText = '';
+                        }
+                       
+                    } else {
+                        document.querySelector('[validation="'+e.target.id+'"]').innerText = 'The Password Doesn\'t match';
+                    }
+                }
+                if(e.target.attributes.validation.value.includes("unique")){
+                    users = localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):{}
+                    user = users[e.target.value]
+                    console.log(user);
+                    if(user){
+                        if(e.target.value==''){
+                                document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                flag = false;
+                            } else {
+                                document.querySelector('[validation="'+field+'"]').innerText = 'Sorry the user id your requesting is already taken try some other userid';
+                                flag = false;
+                            }
+                    }          
+                }         
+            })
+            return true;
+        });
+        
+        function validation(field, flag){
+            let element = document.querySelector('#'+field);
+            let validations = element.attributes.validation.value.split(' ')
+            validations.every((validate)=>{
+                    switch(validate) {
+                        case 'required':
+                            if(element.value==''){
+                                document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                flag = false;
+                            } else {
+                                document.querySelector('[validation="'+field+'"]').innerText = '';
+                            }
+                            break;
+                        case 'cpass':
+                            if(document.querySelector('#'+element.attributes.for.value).value !== element.value) {
+                                if(element.value==''){
+                                    document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                    flag = false;
+                                } else {
+                                    document.querySelector('[validation="'+field+'"]').innerText = 'The Password Doesn\'t match';
+                                    flag = false;
+                                }
+                            } else {
+                                if(element.value==''){
+                                    document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                    flag = false;
+                                } else {
+                                    document.querySelector('[validation="'+field+'"]').innerText = '';
+                                }
+                            }
+                            break;
+                        case 'userId':
+                                    var regex = /^[a-zA-Z]*[0-9]*$/;
+                                    isValid = regex.test(element.value);
+                                    console.log(isValid);
+                                    if(!isValid) {
+                                        if(element.value==''){
+                                            document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                            flag = false;
+                                        } else {
+                                            document.querySelector('[validation="'+field+'"]').innerText = 'User Id should start with alphabet, can not start with numerical and cant have space';
+                                            flag = false;
+                                        }
+                                    }
+                        case 'unique':
+                                users = localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):{}
+                                user = users[element.value]
+                                if(user){
+                                    if(element.value==''){
+                                            document.querySelector('[validation="'+field+'"]').innerText = 'Please Enter the Value';
+                                            flag = false;
+                                        } else {
+                                            document.querySelector('[validation="'+field+'"]').innerText = 'Sorry the user id your requesting is already taken try some other userid';
+                                            flag = false;
+                                        }
+                                }
+
+                }
+                    return true;
+            })
+            return flag
+        }
+        function stringToHash(string) { 
+                  
+            var hash = 0; 
+            
+            if (string.length == 0) return hash; 
+            
+            for (i = 0; i < string.length; i++) { 
+                char = string.charCodeAt(i); 
+                hash = ((hash << 5) - hash) + char; 
+                hash = hash & hash; 
+            } 
+            
+            return hash; 
+        } 
+        document.querySelector('#submitSignUp').addEventListener(
+            'click', ()=>{
+                var fields = ['SignUpUserId', 'SignUpUserName', 'SignUpPassword', 'SignUpCPassword'];
+                if(processFormSubmission(fields)){
+                    let userDetails = {};
+                    fields.pop();
+                    fields.every((field)=>{
+                        let elementField = document.querySelector("#"+field);
+                        userDetails[field] = elementField.value;
+                        if(elementField.attributes.type.value === "password") {
+                            userDetails[field] = stringToHash(elementField.value);
+                        }
+                        elementField.value = "";
+                        return true;
+                    });
+                    document.querySelector("#SignUpCPassword").value = '';
+                    let users = localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):{}
+                    users[userDetails.SignUpUserId] = userDetails;
+                    localStorage.setItem('users', JSON.stringify(users))
+                    location.hash = "#login";
+                    signUp()
+                }
+            }
+        )
+        document.querySelector('#submitLogin').addEventListener(
+            'click', ()=>{
+                var fields = ['loginUserId','loginPassword'];
+                if(processFormSubmission(fields)){
+                    let users = localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')):{}
+                    let userId = document.querySelector("#loginUserId").value 
+                    if(users[userId]){
+                        let password = document.querySelector("#loginPassword").value 
+                        isValid = users[userId].SignUpPassword == stringToHash(password)
+                        if(!isValid){
+                            document.querySelector("[validation='loginPassword']").innerText = "Sorry your password is not valid please try again later."; 
+                        } else {
+                            localStorage.setItem('currentUser', JSON.stringify({userId:userId,token:stringToHash(userId+users[userId].SignUpPassword)}));
+                            let url = location.href.replace(location.hash, '');
+                            let href = url.replace('index.html', 'todo.html')
+                            if(href === url) {
+                                href = href.replace('todo/', 'todo/todo.html');
+                            }
+                            location.replace(href)
+                        }
+                    } else {
+                        document.querySelector("[validation='loginUserId']").innerText = "Sorry the User Id You Entered doesn't found, please try again.";
+                    }
+
+                }
+            }
+        )
+        function processFormSubmission(fields) {
+            let flag = true;
+                fields.every((field)=>{
+                    flag = validation(field, flag)
+                    return true;
+                });
+               return flag;
+        }
+       
+    </script>
+</body>
+</html>
