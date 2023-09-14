@@ -1,7 +1,7 @@
 
 function onclickfun(){
 var obj;
-fetch('http://jsonplaceholder.typicode.com/Posts')
+fetch('https://jsonplaceholder.typicode.com/Posts')
     .then(response => response.json())
     .then(data => {	obj=data;
         //console.log(data)
