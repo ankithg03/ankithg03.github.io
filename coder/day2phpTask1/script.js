@@ -10,7 +10,7 @@ function view(id){
     document.getElementById("somedata").innerHTML=content;
     }
   };
-  xhttp.open("GET", "http://dummy.restapiexample.com/api/v1/employee/"+id, true); 
+  xhttp.open("GET", "https://dummy.restapiexample.com/api/v1/employee/"+id, true); 
   xhttp.send();
 }
 
@@ -48,7 +48,7 @@ function dis(a){
        dis(a);
       }
     };
-    xhttp.open("GET", "http://dummy.restapiexample.com/api/v1/employees", true); 
+    xhttp.open("GET", "https://dummy.restapiexample.com/api/v1/employees", true); 
     xhttp.send();
   }
 loadXMLDoc();
